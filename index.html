@@ -3,13 +3,53 @@
 <head>
   <meta charset="UTF-8">
   <title>My Auto-Deployed Site</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #2c3e50, #3498db);
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 0.2em;
+    }
+
+    p {
+      font-size: 1.2em;
+      margin: 0.3em;
+    }
+
+    .timestamp {
+      font-weight: bold;
+      color: #f1c40f;
+    }
+  </style>
 </head>
 <body>
   <h1>🚀 Success!</h1>
   <p>This site is automatically deployed from GitHub to S3!</p>
-  <p><em>Last updated: May 8th, 2025</em></p>
-  <p>Directory: /Users/davecoyle/cs_293_CI/293_lab7<p>
+  <p><em>Last updated: <span class="timestamp">May 8th, 2025</span></em></p>
+  <p>Directory: <code>/Users/davecoyle/cs_293_CI/293_lab7</code></p>
 
+  <p id="clock"></p>
+
+  <script>
+    function updateTime() {
+      const now = new Date();
+      document.getElementById("clock").textContent = "Current time: " + now.toLocaleTimeString();
+    }
+
+    updateTime();
+    setInterval(updateTime, 1000);
+  </script>
 </body>
 </html>
 
